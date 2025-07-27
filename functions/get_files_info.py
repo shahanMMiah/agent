@@ -1,5 +1,5 @@
 import os
-
+import sys
 
 def get_files_info(working_directory, directory="."):
 
@@ -47,3 +47,7 @@ def get_files_info(working_directory, directory="."):
         info_str = str().join([info_str, f"Error: {err}\n"])
 
     return info_str
+
+if __name__ == "__main__":
+    script, *args = sys.argv
+    print(get_files_info(*args))

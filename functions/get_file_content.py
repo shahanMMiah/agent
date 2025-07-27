@@ -1,4 +1,5 @@
 import os
+import sys
 import locale
 from functions import config
 
@@ -31,6 +32,11 @@ def get_file_content(working_directory, file_path):
                 info_str += read_file
 
     except Exception as err:
-        info_str += f"Error: {err}"
+        info_str = str().join([info_str, f"Error: {err}"])
 
     return info_str
+
+
+if __name__ == "__main__":
+    script, *args = sys.argv
+    print(get_file_content(*args))
